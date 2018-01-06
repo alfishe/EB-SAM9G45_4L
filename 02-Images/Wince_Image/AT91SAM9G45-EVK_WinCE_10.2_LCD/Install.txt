@@ -1,0 +1,4 @@
+EbootÖĞNandFlashÅäÖÃÈçÏÂ£º
+0x8006c000
+0x8006d000
+0x01DB98A8

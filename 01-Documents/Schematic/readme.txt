@@ -1,0 +1,1 @@
+About the Schematic for LCD, Please reference to the corresponding PDF according to your LCD module

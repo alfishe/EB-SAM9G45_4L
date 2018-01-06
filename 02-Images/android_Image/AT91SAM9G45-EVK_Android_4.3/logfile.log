@@ -1,0 +1,754 @@
+-I- Waiting ...
+-I- TCL platform : Windows NT
+-I- SAM-BA 2.9  on : windows
+-I- Retrieved arguments from command line :
+-I- argv 0 : \usb\ARM0
+-I- argv 1 : AT91SAM9G45-EK
+-I- argv 2 : at91sam9g45ekes_demo_linux_nandflash.tcl
+-I- Connection : \usb\ARM0 (target(comType) = 0)
+-I- Board : at91sam9g45-ek
+-I- Traces Level : 4
+-I- target(handle) : 18067720
+Read device Chip ID at 0xfffff240 --- get 0x00000000
+Read device Chip ID at 0xffffee40 --- get 0x819b05a2
+-I- Found processor : at91sam9m10 (Chip ID : 0x819b05a2)
+-I- External RAM Settings :  extRamVdd=0, extRamType=1, extRamDataBusWidth=16, extDDRamModel=0
+-I- Loading applet isp-extram-at91sam9g45.bin at address 0x308000
+-I- Memory Size : 0x8000000 bytes
+-I- Buffer address : 0x309504
+-I- Buffer size: 0x0 bytes
+-I- Applet initialization done
+-I- External RAM initialized
+-I- Command line mode : Execute script file : at91sam9g45ekes_demo_linux_nandflash.tcl
+-I- === Initialize the NAND access ===
+-I- NANDFLASH::Init (trace level : 4)
+-I- Loading applet isp-nandflash-at91sam9g45.bin at address 0x70000000
+-I- Memory Size : 0x10000000 bytes
+-I- Buffer address : 0x70003AA0
+-I- Buffer size: 0x20000 bytes
+-I- Applet initialization done
+-I- === Erase all the NAND flash blocs and test the erasing ===
+-I- GENERIC::EraseAll
+-I- === Load the bootstrap: nandflash_at91sam9-ek in the first sector ===
+GENERIC::SendFile nandflash_at91sam9g45ekes.bin at address 0x0
+-I- File size : 0x1478 byte(s)
+-I- 	Writing: 0x1478 bytes at 0x0 (buffer addr : 0x70003AA0)
+-I- 	0x1478 bytes written by applet
+-I- === Load the u-boot in the next sectors ===
+-I- Send File u-boot.bin at address 0x00020000
+GENERIC::SendFile u-boot.bin at address 0x20000
+-I- File size : 0x2F8AC byte(s)
+-I- 	Writing: 0x20000 bytes at 0x20000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0xF8AC bytes at 0x40000 (buffer addr : 0x70003AA0)
+-I- 	0xF8AC bytes written by applet
+-I- === Load the u-boot environment variables ===
+-I- Send File ubootEnvtFileNandFlash.bin at address 0x00060000
+GENERIC::SendFile ubootEnvtFileNandFlash.bin at address 0x60000
+-I- File size : 0x20000 byte(s)
+-I- 	Writing: 0x20000 bytes at 0x60000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- === Load the Kernel image ===
+-I- Send File uImage at address 0x00200000
+GENERIC::SendFile uImage at address 0x200000
+-I- File size : 0x1FD46C byte(s)
+-I- 	Writing: 0x20000 bytes at 0x200000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x220000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x240000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x260000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x280000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x300000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x320000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x340000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x360000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x380000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x3A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x3C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x1D46C bytes at 0x3E0000 (buffer addr : 0x70003AA0)
+-I- 	0x1D46C bytes written by applet
+-I- === Load the linux file system ===
+-I- Send File at91sam9g45-Android-2.3.1_r1-ver1.0.jffs2 at address 0x00500000
+GENERIC::SendFile at91sam9g45-Android-2.3.1_r1-ver1.0.jffs2 at address 0x500000
+-I- File size : 0x2960000 byte(s)
+-I- 	Writing: 0x20000 bytes at 0x500000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x520000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x540000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x560000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x580000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x5A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x5C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x5E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x600000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x620000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x640000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x660000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x680000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x6A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x6C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x6E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x700000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x720000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x740000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x760000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x780000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x7A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x7C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x7E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x800000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x820000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x840000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x860000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x880000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x8A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x8C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x8E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x900000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x920000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x940000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x960000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x980000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x9A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x9C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x9E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xA00000 (buffer addr : 0x70003AA0)
+-I- 	0x0 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xA20000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xA40000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xA60000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xA80000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xAA0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xAC0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xAE0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xB00000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xB20000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xB40000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xB60000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xB80000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xBA0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xBC0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xBE0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xC00000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xC20000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xC40000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xC60000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xC80000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xCA0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xCC0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xCE0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xD00000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xD20000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xD40000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xD60000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xD80000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xDA0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xDC0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xDE0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xE00000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xE20000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xE40000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xE60000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xE80000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xEA0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xEC0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xEE0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xF00000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xF20000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xF40000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xF60000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xF80000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xFA0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xFC0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0xFE0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1000000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1020000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1040000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1060000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1080000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x10A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x10C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x10E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1100000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1120000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1140000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1160000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1180000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x11A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x11C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x11E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1200000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1220000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1240000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1260000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1280000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x12A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x12C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x12E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1300000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1320000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1340000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1360000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1380000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x13A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x13C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x13E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1400000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1420000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1440000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1460000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1480000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x14A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x14C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x14E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1500000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1520000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1540000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1560000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1580000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x15A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x15C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x15E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1600000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1620000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1640000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1660000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1680000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x16A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x16C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x16E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1700000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1720000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1740000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1760000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1780000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x17A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x17C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x17E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1800000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1820000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1840000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1860000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1880000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x18A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x18C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x18E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1900000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1920000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1940000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1960000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1980000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x19A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x19C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x19E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1A00000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1A20000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1A40000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1A60000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1A80000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1AA0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1AC0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1AE0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1B00000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1B20000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1B40000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1B60000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1B80000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1BA0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1BC0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1BE0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1C00000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1C20000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1C40000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1C60000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1C80000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1CA0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1CC0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1CE0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1D00000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1D20000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1D40000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1D60000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1D80000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1DA0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1DC0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1DE0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1E00000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1E20000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1E40000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1E60000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1E80000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1EA0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1EC0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1EE0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1F00000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1F20000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1F40000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1F60000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1F80000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1FA0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1FC0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x1FE0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2000000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2020000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2040000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2060000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2080000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x20A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x20C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x20E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2100000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2120000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2140000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2160000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2180000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x21A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x21C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x21E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2200000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2220000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2240000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2260000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2280000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x22A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x22C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x22E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2300000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2320000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2340000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2360000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2380000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x23A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x23C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x23E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2400000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2420000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2440000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2460000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2480000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x24A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x24C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x24E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2500000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2520000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2540000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2560000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2580000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x25A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x25C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x25E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2600000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2620000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2640000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2660000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2680000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x26A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x26C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x26E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2700000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2720000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2740000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2760000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2780000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x27A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x27C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x27E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2800000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2820000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2840000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2860000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2880000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x28A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x28C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x28E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2900000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2920000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2940000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2960000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2980000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x29A0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x29C0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x29E0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2A00000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2A20000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2A40000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2A60000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2A80000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2AA0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2AC0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2AE0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2B00000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2B20000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2B40000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2B60000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2B80000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2BA0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2BC0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2BE0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2C00000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2C20000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2C40000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2C60000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2C80000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2CA0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2CC0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2CE0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2D00000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2D20000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2D40000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2D60000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2D80000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2DA0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2DC0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2DE0000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2E00000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2E20000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2E40000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet
+-I- 	Writing: 0x20000 bytes at 0x2E60000 (buffer addr : 0x70003AA0)
+-I- 	0x20000 bytes written by applet

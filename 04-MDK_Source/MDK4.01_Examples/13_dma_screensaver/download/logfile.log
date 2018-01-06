@@ -1,0 +1,45 @@
+-I- Waiting ...
+-I- TCL platform : Windows NT
+-I- SAM-BA 2.9  on : windows
+-I- Retrieved arguments from command line :
+-I- argv 0 : \usb\ARM0
+-I- argv 1 : AT91SAM9G45-EK
+-I- argv 2 : at91sam9g45ekes_test_demo.tcl
+-I- Connection : \usb\ARM0 (target(comType) = 0)
+-I- Board : at91sam9g45-ek
+-I- Traces Level : 4
+-I- target(handle) : 18003344
+Read device Chip ID at 0xfffff240 --- get 0x00000000
+Read device Chip ID at 0xffffee40 --- get 0x819b05a2
+-I- Found processor : at91sam9m10 (Chip ID : 0x819b05a2)
+-I- External RAM Settings :  extRamVdd=0, extRamType=1, extRamDataBusWidth=16, extDDRamModel=0
+-I- Loading applet isp-extram-at91sam9g45.bin at address 0x308000
+-I- Memory Size : 0x8000000 bytes
+-I- Buffer address : 0x309504
+-I- Buffer size: 0x0 bytes
+-I- Applet initialization done
+-I- External RAM initialized
+-I- Command line mode : Execute script file : at91sam9g45ekes_test_demo.tcl
+-I- NANDFLASH::Init (trace level : 4)
+-I- Loading applet isp-nandflash-at91sam9g45.bin at address 0x70000000
+-I- Memory Size : 0x10000000 bytes
+-I- Buffer address : 0x70003AA0
+-I- Buffer size: 0x20000 bytes
+-I- Applet initialization done
+-I- GENERIC::EraseAll
+GENERIC::SendFile nandflash_at91sam9g45ekes.bin at address 0x0
+-I- File size : 0x146C byte(s)
+-I- 	Writing: 0x146C bytes at 0x0 (buffer addr : 0x70003AA0)
+-I- 	0x146C bytes written by applet
+-I- Send File screensaver.bin at address 0x20000
+GENERIC::SendFile screensaver.bin at address 0x20000
+-I- File size : 0x50F0 byte(s)
+-I- 	Writing: 0x50F0 bytes at 0x20000 (buffer addr : 0x70003AA0)
+-I- 	0x50F0 bytes written by applet
+-I- Loading applet isp-extram-at91sam9g45.bin at address 0x308000
+-I- Memory Size : 0x8000000 bytes
+-I- Buffer address : 0x309504
+-I- Buffer size: 0x0 bytes
+-I- Applet initialization done
+-I- Send File image480x272.bmp at address 0x70100000
+-I- File size = 391734 byte(s)
